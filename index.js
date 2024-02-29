@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 
 const app= express();
 
+const cors = require('cors');
+app.use(cors());
+
+
 
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(bodyParser.json());
@@ -28,11 +32,17 @@ const app= express();
 	    let interpretation;
 	    if (bmi < 18.5) {
 	        interpretation = 'Underweight';
-	    } else if (bmi >= 18.5 && bmi <= 24.9) {
+	    } 
+        
+        else if (bmi >= 18.5 && bmi <= 24.9) {
 	        interpretation = 'Normal weight';
-	    } else if (bmi >= 25 && bmi <= 29.9) {
+	    } 
+        
+        else if (bmi >= 25 && bmi <= 29.9) {
 	        interpretation = 'Overweight';
-	    } else {
+	    } 
+        
+        else {
 	        interpretation = 'Obese';
 	    }
 	
